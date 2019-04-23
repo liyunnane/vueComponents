@@ -1,97 +1,60 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+  <div>
+    <el-date-picker v-model="date"></el-date-picker>
+    <el-button @click="clickDate">点击</el-button>
+    <span>{{nub.num!==''?'':(nub.num|formatMoney)}}</span>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  const formCfg = {
+    props: {
+      rules: 212122,
+      model: 'sssssssss'
     }
   }
-}
+  export default {
+    name: 'HelloWorld',
+    props: {
+      aa: {
+        type: String,
+        default: 'aaa'
+      },
+
+    },
+    data() {
+      return {
+        msg: 'Welcome to Your Vue.js App',
+        date: '',
+        nub: {
+          num: ''
+        },
+        datas: [
+          {
+            eee: '11212121',
+            ffff: '3232323232',
+            gggg: 'qwqwqwqwqwq'
+          }
+        ]
+      }
+    },
+    methods:{
+      clickDate: function () {
+        this.date = '20190302';
+
+      }
+    }
+    // render(h) {
+    //   const formCfg = {
+    //     props: {
+    //       rules: 212122,
+    //       model: 'sssssssss'
+    //     }
+    //   }
+    //   console.log(...formCfg)
+    //   return ( < div> <el-date-picker v-model="date"></el-date-picker> </div>)
+    // }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

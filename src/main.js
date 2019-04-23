@@ -31,7 +31,6 @@ let Car = function () {
 Car.prototype={
   
   getPrice: function () {
-    console.log(2121212);
     return new Error('抽象方法不能调用');
   },
   getSpeed: function () {
